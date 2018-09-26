@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: 2018-09-26 16:38:15
+  till: 2018-09-26 16:38:15
+  employee_id: 1
+  bike_id: 1
+
+two:
+  from: 2018-09-26 16:38:15
+  till: 2018-09-26 16:38:15
+  employee_id: 1
+  bike_id: 1

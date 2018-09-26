@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bikes</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 top-nav">
+          <ul class="top-nav-link">
+            <li>
+              <a href="/bikes">Bikes</a>
+            </li><li>
+              <a href="/reservations">Reservations</a>
+            </li><li>
+              <a href="/employees">Employees</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>
