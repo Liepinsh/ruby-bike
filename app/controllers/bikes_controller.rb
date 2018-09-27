@@ -1,4 +1,6 @@
 class BikesController < ApplicationController
+  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+
   def index
     @bikes = Bike.all
   end
@@ -40,7 +42,7 @@ class BikesController < ApplicationController
   end
 
   def destroy
-    @bike = Bike.find(params[:id])
+    @bike.destroy
 
     respond_to do |format|
       format.html { redirect_to bikes_url, notice: 'Bike was successfully destroyed.' }
@@ -48,6 +50,10 @@ class BikesController < ApplicationController
   end
 
   private
+
+    def set_bike
+      @bike = Bike.find(params[:id])
+    end
 
     def bike_params
       params.require(:bike).permit(:name, :available)

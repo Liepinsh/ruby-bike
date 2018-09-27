@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :from %>
-    <%= form.time_select :from %>
+    <%= form.datetime_select :from, minute_step: 15 %>
   </div>
 
   <div class="field">
     <%= form.label :till %>
-    <%= form.time_select :till %>
+    <%= form.datetime_select :till, minute_step: 15 %>
   </div>
 
   <div class="field">

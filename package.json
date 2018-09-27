@@ -2,6 +2,7 @@
   "name": "bikes",
   "private": true,
   "dependencies": {
-    "jquery": "3.3.1"
+    "jquery": "3.3.1",
+    "jquery-ui": "^1.12.1"
   }
 }

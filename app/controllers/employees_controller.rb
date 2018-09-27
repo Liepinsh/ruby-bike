@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+  before_action :set_employee, only: [:show, :edit, :update, :destroy]
+
   def index
     @employees = Employee.all
   end
@@ -40,7 +42,7 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
-    @employee = Employee.find(params[:id])
+    @employee.destroy
 
     respond_to do |format|
       format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
@@ -49,6 +51,10 @@ class EmployeesController < ApplicationController
 
   private
   
+    def set_employee
+      @employee = Employee.find(params[:id])
+    end
+
     def employee_params
       params.require(:employee).permit(:name, :surname)
     end

@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+
   def index
     @reservations = Reservation.all
   end
@@ -40,14 +42,18 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation = Reservation.find(params[:id])
-
+    @reservation.destroy
     respond_to do |format|
       format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
   private
+
+    def set_reservation
+      @reservation = Reservation.find(params[:id])
+    end
 
     def reservation_params
       params.require(:reservation).permit(:from, :till, :employee_id, :bike_id)

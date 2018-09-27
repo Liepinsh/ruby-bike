@@ -3,7 +3,14 @@ class Reservation < ApplicationRecord
     belongs_to :bike
     
     validate :time
-    validate :takens
+    # validate :biko
+    # validate :takens
+
+    validate :bikers, if: -> { bike.ride.present?}
+
+    def bikers
+        errors.add(:bike_id, 'Result cannot be tie!') if  Bike.where(bike: self) == bike.ride
+    end
 
     def taken
         if bike.ride.include? "false"
@@ -23,11 +30,17 @@ class Reservation < ApplicationRecord
         end
     end
 
-    def takens
-        if bike.ride.include? "false"
-            errors.add(:bike_id, "is reserved. Pick another one or wait from #{from} till #{till} #{bike_id} ")
-        end
-    end
+    # def biko
+    #     if bike.ride.where(bike: self).size > 0
+    #         errors.add(:bike_id, "is reserved. Pick another one or wait from #{from} till #{till} #{bike_id}")
+    #     end
+    # end
+
+    # def takens
+    #     if bike.ride.include? "false"
+    #         errors.add(:bike_id, "is reserved. Pick another one or wait from #{from} till #{till} #{bike_id} ")
+    #     end
+    # end
 end
 
     
