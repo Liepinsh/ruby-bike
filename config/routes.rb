@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  resources :reservations
-  resources :bikes
-  resources :employees
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :reservations do
+    collection do
+      get 'reservation_ajax'
+    end
+  end
+  resources :bikes do
+    collection do
+      get 'bike_ajax'
+    end
+  end
+  resources :employees do
+    collection do
+      get 'employee_ajax'
+    end
+  end
 end

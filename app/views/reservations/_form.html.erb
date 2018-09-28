@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :from %>
-    <%= form.datetime_select :from, minute_step: 15 %>
+    <%= form.label :starting %>
+    <%= form.datetime_select :starting, minute_step: 15 %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :bike %>
-    <%= form.collection_select :bike_id, Bike.all, :id, :ride, prompt: true %>
+    <%= form.collection_select :bike_id, Bike.all, :id, :name, prompt: true %>
   </div>
 
   <div class="actions">

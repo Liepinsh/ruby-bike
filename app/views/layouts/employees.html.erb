@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bikes</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'employees', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 top-nav">
+          <ul class="top-nav-link">
+            <li>
+              <a href="/bikes">Bikes</a>
+            </li><li>
+              <a href="/reservations">Reservations</a>
+            </li><li>
+              <a href="/employees">Employees</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+    <%= yield %>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  
+</html>

@@ -2,7 +2,7 @@
 
 <p>
   <strong>From:</strong>
-  <%= @reservation.from %>
+  <%= @reservation.starting %>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong>Bike:</strong>
-  <%= @reservation.bike.ride %>
+  <%= @reservation.bike.name %>
 </p>
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
