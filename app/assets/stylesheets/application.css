@@ -212,3 +212,11 @@ h4 a:hover{
     color: #f4f4f4;
     padding: 5px 20px;
 }
+
+#error_explanation{
+    color: #f4f4f4;
+}
+
+#error_explanation ul{
+    list-style-type: none;
+}
