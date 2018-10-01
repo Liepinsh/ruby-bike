@@ -1,5 +1,13 @@
-<h1>New Reservation</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-7 center">
+        <h1>New reservation</h1>
+        </div>
 
-<%= render 'form', reservation: @reservation %>
+        <%= render 'form', reservation: @reservation %>
 
-<%= link_to 'Back', reservations_path %>
+        <div class="col-xs-7 center new-reservation">
+            <h4><%= link_to 'Back', reservations_path %></h4>
+        </div>
+    </div>
+</div>

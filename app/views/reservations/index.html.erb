@@ -45,14 +45,14 @@
               <div class="col-xs-3 center">
                 <% @reservations.each do |reservation| %>
                   <div data-reservation-id="<%= reservation.id %>">
-                    <h5 data-reservation-attribute="starting"><%= reservation.starting.strftime("%H:%M %Y.%m.%e") %></h5>
+                    <h5 data-reservation-attribute="starting"><%= reservation.starting.strftime("%H:%M %Y.%m.%d") %></h5>
                   </div>
                 <% end %>
               </div>
               <div class="col-xs-3 center">
                 <% @reservations.each do |reservation| %>
                   <div data-reservation-id="<%= reservation.id %>">
-                    <h5 data-reservation-attribute="till"><%= reservation.till.strftime("%H:%M %Y.%m.%e") %></h5>
+                    <h5 data-reservation-attribute="till"><%= reservation.till.strftime("%H:%M %Y.%m.%d") %></h5>
                   </div>
                 <% end %>
               </div>
@@ -73,12 +73,11 @@
             </div>
           </div>
           <br>
-          <div class="new-reservation">
-            <h4><%= link_to '+ New Reservation', new_reservation_path %></h4>
-          </div>
         </div>
       </div>
-      </div>
+    </div>
+    <div class="col-xs-7 center new-reservation">
+      <h4><%= link_to '+ New Reservation', new_reservation_path %></h4>
     </div>
   </div>
 </div>

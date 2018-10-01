@@ -1,32 +1,73 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Employees</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Full name</th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr data-employee-id="<%= employee.id %>">
-        <td data-employee-attribute="name"><%= employee.name %></td>
-        <td data-employee-attribute="surname"><%= employee.surname %></td>
-        <td data-employee-attribute="full_name"><%= employee.full_name %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Employee', new_employee_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-7 center">
+      <h1>Employees</h1>
+    </div>
+    <div class="col-xs-7 info-block">
+      <p id="notice"><%= notice %></p>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 table-head">
+              <div class="col-xs-3 center">
+                <h3>Name</h3>
+              </div>
+              <div class="col-xs-3 center">
+                <h3>Surname</h3>
+              </div>
+              <div class="col-xs-4 center">
+                <h3>Full name</h3>
+              </div>
+              <div class="col-xs-2 center">
+                <h3>+ / -</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 table-content">
+              <div class="col-xs-3 table-content-empl-name">
+                <% @employees.each do |employee| %>
+                  <div data-employee-id="<%= employee.id %>">
+                    <h5 data-employee-attribute="name"><%= employee.name %></h5>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-xs-3 table-content-column">
+                <% @employees.each do |employee| %>
+                  <div data-employee-id="<%= employee.id %>">
+                    <h5 data-employee-attribute="surname"><%= employee.surname %></h5>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-xs-4 table-content-column">
+                <% @employees.each do |employee| %>
+                  <div data-employee-id="<%= employee.id %>">
+                    <h5 data-employee-attribute="full_name"><%= employee.full_name %></h5>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-xs-1 table-content-edit center edit">
+                <% @employees.each do |employee| %>
+                  <div data-employee-id="<%= employee.id %>">
+                    <h5><%= link_to 'Edit', edit_employee_path(employee) %></h5>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-xs-1 table-content-destroy center destroy">
+                <% @employees.each do |employee| %>
+                  <div data-employee-id="<%= employee.id %>">
+                    <h5><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <br>
+          </div>
+        </div>
+      </div>
+    <div class="col-xs-7 center new-reservation">
+      <h4><%= link_to '+ New Employee', new_employee_path %></h4>
+    </div>
+  </div>
+</div>
