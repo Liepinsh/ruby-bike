@@ -10,15 +10,15 @@ class Reservation < ApplicationRecord
         end
     end
 
-    validate :availability 
+    # validate :availability 
 
-    def availability
-        if Bike.where(bike: self).where("starting <= ?", self.starting).where("till >= ?", self.starting).size > 0 ||
-            Bike.where(bike: self).where("starting <= ?", self.till).where("till >= ?", self.till).size > 0
+    # def availability
+    #     if Bike.where(bike_id: self.bike_id).where("starting <= ?", self.starting).where("till >= ?", self.starting).size > 0 ||
+    #         Bike.where(bike_id: self.bike_id).where("starting <= ?", self.till).where("till >= ?", self.till).size > 0
     
-            errors.add(:bike_id, "Bike is not available at this time")
-        end
-    end
+    #         errors.add(:bike_id, "Bike is not available at this time")
+    #     end
+    # end
 
     # def availability
     #     if Bike.where(bike: self).where("starting <= ?", self.starting).where("till >= ?", self.starting).size > 0 ||

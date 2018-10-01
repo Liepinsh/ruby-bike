@@ -10,21 +10,25 @@
   </head>
 
   <body>
+  <header>
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 top-nav">
-          <ul class="top-nav-link">
-            <li>
-              <a href="/bikes">Bikes</a>
-            </li><li>
-              <a href="/reservations">Reservations</a>
-            </li><li>
+        <div class="col-xs-12">
+          <a href="/reservations" class="logo">Bike Timer</a>
+          <ion-icon name="menu" class="hamburger hydrated" role="img"></ion-icon>
+          <ul class="top-nav-link" id="list" style="margin-top: 0px;">
+            <li class="top-nav-li-reservation">
+              <a href="/reservations">Reservation</a>
+            </li><li class="top-nav-li-employee">
               <a href="/employees">Employees</a>
+            </li><li class="top-nav-li-bike">
+                <a href="/bikes">Bikes</a>
             </li>
           </ul>
         </div>
       </div>
-  </div>
+    </div>
+  </header>
     <%= yield %>
   </body>
 

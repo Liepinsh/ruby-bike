@@ -13,3 +13,161 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body{
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://images.pexels.com/photos/2884/building-vintage-bike-monument.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+header{
+    margin: 0 0 50px;
+}
+/* 
+* Header logo
+*/
+
+.logo:link, .logo:visited{
+    float: left;
+    padding: 0 20px;
+    font-size: 36px;
+    color: #383838;
+    margin: 90px 0 0 100px;
+    border: solid 1px #383838;
+}
+
+.logo:hover{
+    text-decoration: none;
+    border: dashed 1px #383838;
+}
+
+/* 
+* Header navigation list and items
+*/
+
+.top-nav-link{
+    float: right;
+    box-sizing: border-box;
+}
+
+.top-nav-link li{
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.top-nav-li-reservation a{
+    float: right;
+    margin: 30px 300px 10px 0;
+}
+
+.top-nav-li-employee a{
+    float: right;
+    margin: 10px 140px 10px 140px;
+}
+
+.top-nav-li-bike a{
+    float: right;
+    margin: 10px 0 10px 200px;
+}
+
+.top-nav-link li a:link, .top-nav-link li a:visited{
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    -o-transition: all 0.3 ease;
+    -moz-transition: all 0.3 ease;
+    -webkit-transition: all 0.3 ease;
+    border-bottom: 2px solid transparent;
+}
+
+.top-nav-link li a:hover{
+    color: rgb(255, 238, 5);
+    border-bottom: 2px solid orange;
+}
+
+h1{
+    color: #383838;
+    margin: 20px 0 30px;
+    padding: 5px 10px;
+}
+
+h3{
+    margin: 5px 0 10px;
+}
+
+.info-block{
+    background-color: #36304a;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.center{
+    text-align: center;
+}
+
+.table-head{
+    color: #f4f4f4;
+}
+
+.table-content, h5{
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+}
+
+h6{
+    font-size: 10px;
+}
+
+.edit{
+    padding: 0;
+    margin: 0 -5px 0 0;
+}
+
+.destroy{
+    padding: 0 20px 0 0;
+}
+
+h4 a:link, h4 a:visited{
+    background-color: #36304a;
+    color: #f4f4f4;
+    display: inline-flex;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+h4 a:hover{
+    text-decoration: none;
+    background-color: #f4f4f4;
+    color: #36304a;
+}
+
+.table-head-column{
+    margin: 0 15px 0 -15px;
+}
+
+.new-reservation{
+    text-align: center;
+}
+
+.table-content-employee{
+    padding: 0 0 0 30px;
+}
+
+.table-head-edit{
+    margin: 0 -15px 0 15px;
+}
